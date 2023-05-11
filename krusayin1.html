@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Կուրսային աշխատանք</title>
+	<style>
+        body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.main{
+	width: 350px;
+	height: 500px;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #6d44b8;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+    </style>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<div>
+					<label for="chk" aria-hidden="true">Sign Up Page</label>
+					<input type="text" name="txt" placeholder="User name" required="" id="nameinput">
+					<!-- <input type="email" name="email" placeholder="Email" required=""> -->
+					<input type="password" name="pswd" placeholder="Password" required="" id="passinput">
+					
+                     <form action="error.html">
+                <button id="signUp">Sign up</button>
+            </form>
+				</div>
+			</div>
+
+			<div class="login">
+				<div>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</div>
+			</div>
+	</div>
+	<script>
+        //1in mas
+
+class MainUser {
+        constructor(username,password) {
+        this.username=username;
+        this.password=password
+    }
+  }
+  
+let fakeData = [
+    {
+        username: "mary2008",
+        password: "oUdMurKS18"
+    },
+    {
+        username: "naresharmm",
+        password: "sevak24br90"
+    },
+    {
+        username: "hr_arm",
+        password: "854honey_check"
+    },
+    {
+        username: "m_hovespyan",
+        password: "8123k"
+    },
+    {
+    username: "hovsep209",
+    password: "OpenAI123"
+    }
+];
+
+let nameInput = document.getElementById('nameinput');
+let signUp = document.getElementById('signUp');
+let passinput=document.getElementById("passinput")
+
+let user1 = new MainUser();
+
+nameInput.addEventListener('change', function (event) {
+    user1.username = event.target.value;
+})
+
+passinput.addEventListener('change', function (event) {
+    user1.password = event.target.value
+})
+
+function funcCheck(){
+    let checked;
+    for(let i = 0; i < fakeData.length; i++) {
+        if(fakeData[i].username === user1.username && 
+		fakeData[i].password === user1.password) {
+            checked = true;
+            console.log(checked)
+            alert (checked)
+			return checked
+        }
+    }
+   alert("Invalid username or password")
+
+    return checked
+}
+
+signUp.addEventListener('click', funcCheck)
+ 
+//2rd mas
+// // Driver code
+let P=null;
+let G=null;
+let x=null;
+let a=null;
+let y=null;
+let b=null; 
+let ka=null;
+let kb=null;
+
+function fooPow(a, b, p)
+{
+    if (b == 1)
+        return a;
+    else
+        return((Math.pow(a, b)) % p);
+}
+ 
+
+// A prime number P is taken
+P = 47;
+ console.log("The value of P is",P);
+// A primitive root for P, G is taken
+G = 12;
+console.log("The value of G",G );
+ 
+
+// a  private key
+a = 4;
+console.log("The private key for A ", a );
+// Gets the generated key
+x = fooPow(G, a, P);
+ 
+// b chosen private key   
+b = 3;
+console.log("The private key b " ,
+               b );
+ 
+//  generated key
+y = fooPow(G, b, P);
+ 
+// the secret key after the exchange
+ka = fooPow(y, a, P); // Secret key for A
+kb = fooPow(x, b, P); // Secret key for B
+ 
+console.log("Encrypted key for A:",
+               ka );
+console.log("Encrypted key for B", kb
+               );
+ 
+    </script>
+</body>
+</html>
